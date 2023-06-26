@@ -1,0 +1,7 @@
+{
+  "name": "Kannect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
