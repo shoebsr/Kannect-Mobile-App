@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title align="center" class="text-header text-white">Kannect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-6" align="center">
+    <div class="pt-16">
+      <img width="90" height="90" src="assets/img/logo.png" alt="">
+      <ion-label class="text-extralarge mt-8">
+        Forgot Password
+      </ion-label>
+    </div>
+    <form [formGroup]="Userform" (ngSubmit)="submit()">
+    <div class="pt-16">
+      <ion-label align="left" class="mt-1 text-start">Enter email id/ mobile number of your Kannect account and we will
+        send you a new password verification code.
+      </ion-label>
+      <ion-item lines="none" class="ion-input-box mt-6">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+          <path
+            d="M2.24283 6.85419L11.4895 1.30843C11.8062 1.11848 12.2019 1.11855 12.5185 1.30862L21.7573 6.85416C21.9079 6.94453 22 7.10726 22 7.28286V19.9998C22 20.5521 21.5523 20.9998 21 20.9998H3C2.44772 20.9998 2 20.5521 2 19.9998V7.28298C2 7.10732 2.09218 6.94454 2.24283 6.85419ZM4 8.13244V18.9998H20V8.13197L12.0037 3.33221L4 8.13244ZM12.0597 13.6981L17.3556 9.23515L18.6444 10.7645L12.074 16.3016L5.36401 10.7715L6.63599 9.22813L12.0597 13.6981Z"
+            fill="rgba(205,205,205,1)"></path>
+        </svg>&nbsp;&nbsp;
+        <ion-input aria-label="Email address/Phone Number" placeholder="Email address/Phone Number" formControlName="email"
+        [(ngModel)]="userdata.email" name="email"></ion-input>
+      </ion-item>
+
+
+
+      <button class="btn-grad mt-6" type="submit">
+        <span style="float: center; font-weight: bold; font-size: 0.9rem">Submit</span>
+      </button>
+
+
+    </div>
+  </form>
+  </div>
+</ion-content>

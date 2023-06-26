@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title>QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-4" class="ion-padding">
+    <div class="flex justify-center pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> Search Organizations</p>
+    </div>
+    <div class="flex justify-center pt-2 pl-2 pr-2">
+      <button class="mt-2">
+        <ion-icon style="color: #f80592;" name="scan-outline"></ion-icon>&nbsp;Scan QR
+      </button>
+    </div>
+
+    <div class="flex justify-center pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> QR</p>
+    </div>
+
+
+    <div class="flex justify-center pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2">Enter The Code</p>
+    </div>
+
+    <ion-item lines="none" class="ion-input-box mt-6">
+      <ion-input aria-label="Enter code here" placeholder="Enter code here" name="firstName">
+      </ion-input>
+    </ion-item>
+
+    <div class="flex justify-center pt-2 pl-2 pr-2">
+      <button class="mt-2 btncard">Submit</button>
+      <!-- <button class="mt-2">
+        <ion-icon style="color: #f80592;" name="scan-outline"></ion-icon>&nbsp;Scan QR
+      </button> -->
+    </div>
+
+    <!-- <div class="flex justify-center pt-2 pl-2 pr-2">
+      <ion-item lines="none" class="ion-input-box mt-6">
+        <ion-input aria-label="Full Name" placeholder="Full Name" formControlName="firstName" name="firstName" required>
+        </ion-input>
+      </ion-item>
+    </div> -->
+  </div>
+
+</ion-content>
+<app-footer></app-footer>

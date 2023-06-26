@@ -1,0 +1,30 @@
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row class="ion_toolbar">
+      <ion-col size="3" style="text-align: center;">
+        <span (click)="changeTab('home')" [class.active]="activeTab === 'home'">
+          <ion-icon name="home" size="small"></ion-icon><br>
+          <ion-label>Home</ion-label>
+        </span>
+      </ion-col>
+      <ion-col size="3" style="text-align: center">
+        <span (click)="changeTab('tracker')" [class.active]="activeTab === 'tracker'">
+          <ion-icon name="calendar-clear" size="small"></ion-icon><br>
+          <ion-label>Task Tracker</ion-label>
+        </span>
+      </ion-col>
+      <ion-col size="3" style="text-align: center">
+        <span (click)="changeTab('messages')" [class.active]="activeTab === 'messages'">
+          <ion-icon name="chatbubble-ellipses" size="small"></ion-icon><br>
+          <ion-label>Messages</ion-label>
+        </span>
+      </ion-col>
+      <ion-col size="3" style="text-align: center">
+        <span (click)="changeTab('profile')" [class.active]="activeTab === 'profile'">
+          <ion-icon name="person-circle" size="small"></ion-icon><br>
+          <ion-label>Profile</ion-label>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

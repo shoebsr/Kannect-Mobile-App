@@ -1,0 +1,64 @@
+.footer-tab1.active{
+  border-bottom: 2px solid var(--ion-color-primary);
+
+}
+
+.footer-tab.active{
+  ion-icon{
+    font-size: 1rem;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+  }ion-label{
+    font-size: 0.9rem;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+  }
+}
+
+.footer-tab{
+  ion-icon{
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    font-weight: bold;
+  }ion-label{
+    font-size: 0.9rem;
+    color: var(--ion-color-primary);
+    font-weight: bold;
+  }
+}
+
+  .footer-label-icon{
+    padding:0.6rem 1.8rem !important;
+  border-radius: 0.5rem;
+  ion-icon{
+    margin-top: 1px;
+    font-size:1rem;
+    color:var(--ion-color-primary);
+  }
+  ion-label{
+    margin-left: 10px;
+    font-size:1rem;
+    color:var(--ion-color-primary);
+  }
+}
+
+
+.text-dashsmall {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-size: 8px;
+  line-height: 21px;
+  align-items: center;
+  color: #979797;
+}
+ion-footer .ion_toolbar ion-col {
+  cursor: pointer;
+}
+
+ion-footer .ion_toolbar span {
+  color: var(--ion-color-medium); /* Default color for icons and labels */
+}
+
+ion-footer .ion_toolbar span.active {
+  color: #f80592; /* Color for active icons and labels */
+}

@@ -1,0 +1,136 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">Org Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img class="w-full" src="assets/img/image_144.png" alt="">
+
+  <div class="mt-2 border-b border-gray-300">
+    <ion-row class="p-2">
+      <ion-col size="2">
+        <img class="w-full" style="z-index: 1000; position: absolute; margin-top: -42%;" src="assets/img/5. Avatar.png"
+          alt="">
+      </ion-col>
+      <ion-col size="6" class="-mt-3 pl-2" align="left">
+        <ion-label class="head-det pl-1">
+          Heads Foundation
+        </ion-label>
+        <p class="text-sm text-gray-400 pl-1">Non-profit</p>
+      </ion-col>
+      <ion-col size="2" class="-mt-3">
+        <div align="center" style="background-color: red; color: white; border-radius: 5px;">
+          <div class="text-white font-bold">GOAL</div>
+          <p class="text-sm text-white">6</p>
+        </div>
+      </ion-col>
+      <ion-col size="2" class="-mt-3">
+        <div align="center" style="background-color: #1b8dd4; color: white; border-radius: 5px;">
+          <div class="text-white font-bold">GOAL</div>
+          <p class="text-sm text-white pl-1">1</p>
+        </div>
+      </ion-col>
+
+    </ion-row>
+    <ion-grid class="container switch mt-4">
+      <ion-row class="row">
+        <ion-col size="12">
+          <button class="mt-2 w-full">Join as member</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="container switch mt-4">
+      <ion-row class="row">
+        <ion-col size="12">
+          <button class="mt-2 w-full">Message</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="p-2">
+    <ion-segment (ionChange)="segmentChanged($event)" scrollable value="activity">
+      <ion-segment-button value="activity">
+        <ion-label class="hover:border-b-4 font-100 hover:font-bold border-red-600">Activity</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="details">
+        <ion-label class=" hover:border-b-4 hover:font-bold border-red-600">Details</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div class="ion-padding" *ngIf="switchTab === 'activity'">
+      <div class="p-4" align="center">
+        <div style="margin-top: 50%;">
+          <img src="assets/img/track.png" alt="">
+          <p>You do not have any tasks from organizations.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="ion-padding" *ngIf="switchTab === 'details'">
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="text-tit pl-2"> Mission</p>
+      </div>
+
+      <p class="textdec pl-2">We reach & serve persons affected by Leprosy, medically and sociially to get their life
+        better.</p>
+
+      <div align="center" class="p-2">
+        <p class="textdec pl-2">"LET'S END UP THE POVERTY HEADS FOUNDATION"</p>
+      </div>
+
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="text-tit pl-2"> About Us</p>
+
+        <p class="textdec pl-2">Heads foundation is established as an international charitable foundation in 2014,
+          HEASs'foundation aims to advance the study and understanding of the links between these
+          fields and the development of human capital and social capital, along with their implications for governments,
+          businesses amd civic society in the region.
+        </p>
+
+        <div class="flex justify-between pt-2 pl-2 pr-2">
+          <p class="text-tit pl-2"> Other details</p>
+        </div>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="5">
+              <p class="textside">Admin name</p>
+            </ion-col>
+            <ion-col size="1"> :</ion-col>
+            <ion-col class="textdec" size="6"> Jenny Fox</ion-col>
+
+            <ion-col size="5">
+              <p class="textside">Account link</p>
+            </ion-col>
+            <ion-col size="1"> :</ion-col>
+            <ion-col class="textdec" size="6">www.ngokannect.com</ion-col>
+
+            <ion-col size="5">
+              <p class="textside">Location</p>
+            </ion-col>
+            <ion-col size="1"> :</ion-col>
+            <ion-col class="textdec" size="6">US</ion-col>
+
+            <ion-col size="5">
+              <p class="textside">Email</p>
+            </ion-col>
+            <ion-col size="1"> :</ion-col>
+            <ion-col class="textdec" size="6">xyz@gmail.com</ion-col>
+
+            <ion-col size="5">
+              <p class="textside">Website</p>
+            </ion-col>
+            <ion-col size="1"> :</ion-col>
+            <ion-col class="textdec" size="6">www.headsfoundation.org</ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Messages</ion-title>
+    <ion-icon routerLink="/create-messages" slot="end" class="pr-2 text-white text-lg" name="create-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-2">
+    <ion-searchbar></ion-searchbar>
+    <div class="border-b border-gray-300 p-1 mt-2">
+      <ion-row class="pb-2">
+        <ion-col size="2">
+          <img class="w-10 h-10 rounded-full" src="assets/img/Avatar.png" alt="">
+        </ion-col>
+        <ion-col size="7">
+          <p class="textdec1">Roger Hulg</p>
+          <p class="textside">Hey, can i ask something? i need your help please</p>
+        </ion-col>
+        <ion-col align="right" size="3">
+          <p class="textside1">15 mins</p>
+          <div class="notification-container">
+            <div class="notification-badge bg-pink">3</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+    <div class="border-b border-gray-300 p-1 mt-2">
+      <ion-row class="pb-2">
+        <ion-col size="2">
+          <img class="w-10 h-10 rounded-full" src="assets/img/Avatar.png" alt="">
+        </ion-col>
+        <ion-col size="7">
+          <p class="textdec1">Hilman Nuris</p>
+          <p class="textside">thanks for your information</p>
+        </ion-col>
+        <ion-col align="right" size="3">
+          <p class="textside1">Yesterday</p>
+          <div class="notification-container mb-4">
+            <div class="notification-badge bg-pink">3</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+  </div>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Membership List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="p-3">
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-tit"> Your Membership</p>
+    </div>
+
+    <div class="memcard mt-2"  *ngFor="let item of listdata">
+      <ion-row (click)="goTomemberdetails(item)">
+        <ion-col size="2">
+          <img src="{{item.img_logo}}" alt="">
+        </ion-col>
+        <ion-col size="6" align="left">
+          <ion-label class="text-card pl-1">
+            {{item.org_name}}
+          </ion-label>
+          <ng-container [ngSwitch]="item.org_type">
+            <span *ngSwitchCase="'N'">Non Profit/NGO</span>
+            <span *ngSwitchCase="'P'">For Profit</span>
+            <span *ngSwitchCase="'A'">Association</span>
+            <span *ngSwitchCase="'C'">Club</span>
+            <span *ngSwitchCase="'G'">Networking Group</span>
+            <span *ngSwitchDefault>Unknown Type</span>
+          </ng-container>
+          <!-- <p class="text-sm text-gray-400 pl-1" *ngIf="item.org_type === 'N'">Non-profit NGO</p> -->
+        </ion-col>
+        <ion-col size="2">
+          <div class="notification-container">
+            <ion-icon class="bg-pink-100 p-3 rounded-full" style="color: #ff0090;" name="clipboard-outline">
+            </ion-icon>
+            <div class="notification-badge bg-pink">1</div>
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="notification-container">
+            <ion-icon class="bg-blue-100 p-3 rounded-full" style="color: #1b8dd4;" name="chatbox-outline"></ion-icon>
+            <div class="notification-badge bg-blue">3</div>
+          </div>
+        </ion-col>
+
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

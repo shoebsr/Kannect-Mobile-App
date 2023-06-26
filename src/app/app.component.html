@@ -1,3 +1,113 @@
-<ion-app>
+<!-- <ion-app>
   <ion-router-outlet></ion-router-outlet>
+</ion-app> -->
+<ion-app>
+  <ion-menu side="start" contentId="main" menuClose="left">
+    <ion-content>
+
+      <div class="p-4">
+        <div class="flex justify-end">
+          <img src="assets/img/Vector.png" alt="">
+        </div>
+        <div class="flex justify-start pl-4 profile_div">
+          <div class="-mt-2">
+            <img src="assets/img/Oval.png" alt="">
+          </div>
+          <div class="ml-3">
+            <ion-text class="pt-3 text-extralarge">Jennifier Deo<br>
+              <p class="text-sm text-gray-200">Team US</p><br>
+            </ion-text>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="">
+        <div class="border-b border-gray-300"></div>
+      </div>
+
+      <div class="p-4">
+        <ion-list class="menu-items" lines="none">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/membership-list">
+              <div>
+                <img src="assets/img/Vector_2.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Memberships</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+
+            <ion-item lines="none" routerLink="/contact">
+              <div>
+                <img src="assets/img/Vector_4.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Contact Us</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+            <ion-item routerLink="/qr">
+              <div>
+                <img src="assets/img/Vector_5.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Scan Organizations</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+            <ion-item routerLink="/unitconverter">
+              <div>
+                <img src="assets/img/Vector_6.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Privacy Policy</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+            <ion-item>
+              <div>
+                <img src="assets/img/Vector_7.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Terms and Conditions</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+            <ion-item>
+              <div>
+                <img src="assets/img/Vector_7.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Settings</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+
+            <ion-item routerLink="/ngo-profile-details">
+              <div>
+                <img src="assets/img/Vector_7.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Org Profile</ion-text>
+              <img slot="end" src="assets/img/Vector_3.png" alt="">
+            </ion-item>
+
+
+
+            <ion-item routerLink="/login">
+              <div>
+                <img src="assets/img/Vector_8.png" alt="">
+              </div>
+              <ion-text color="dark" class="pl-4 app-text">Log Out</ion-text>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </div>
+    </ion-content>
+
+    <div>
+      <div align="center" class="pb-3 bounce-in-top" style="margin-top: 5%;">
+        <img src="assets/meritlogo.png" width="55%" height="55%" alt="">
+      </div>
+    </div>
+
+  </ion-menu>
+  <ion-router-outlet id="main">
+  </ion-router-outlet>
 </ion-app>

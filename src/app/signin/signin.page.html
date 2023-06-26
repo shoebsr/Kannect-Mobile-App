@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title align="center" class="text-header text-white">Kannect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="Userform" (ngSubmit)="signin()">
+    <div class="p-6" align="center">
+      <div class="pt-16">
+        <img width="90" height="90" src="assets/img/logo.png" alt="">
+        <ion-label class="text-extralarge mt-8 pt-2">
+          Welcome back <br> Mayuri!
+        </ion-label>
+      </div>
+
+      <div class="pt-16">
+        <ion-item lines="none" class="ion-input-box mt-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+            <path
+              d="M2.24283 6.85419L11.4895 1.30843C11.8062 1.11848 12.2019 1.11855 12.5185 1.30862L21.7573 6.85416C21.9079 6.94453 22 7.10726 22 7.28286V19.9998C22 20.5521 21.5523 20.9998 21 20.9998H3C2.44772 20.9998 2 20.5521 2 19.9998V7.28298C2 7.10732 2.09218 6.94454 2.24283 6.85419ZM4 8.13244V18.9998H20V8.13197L12.0037 3.33221L4 8.13244ZM12.0597 13.6981L17.3556 9.23515L18.6444 10.7645L12.074 16.3016L5.36401 10.7715L6.63599 9.22813L12.0597 13.6981Z"
+              fill="rgba(205,205,205,1)"></path>
+          </svg>&nbsp;&nbsp;
+          <ion-input aria-label="Email address/Phone Number" placeholder="Email address/Phone Number"
+          formControlName="email"
+          [(ngModel)]="userdata.email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="ion-input-box mt-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+            <path
+              d="M6 8V7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7V8H20C20.5523 8 21 8.44772 21 9V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V9C3 8.44772 3.44772 8 4 8H6ZM19 10H5V20H19V10ZM11 15.7324C10.4022 15.3866 10 14.7403 10 14C10 12.8954 10.8954 12 12 12C13.1046 12 14 12.8954 14 14C14 14.7403 13.5978 15.3866 13 15.7324V18H11V15.7324ZM8 8H16V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V8Z"
+              fill="rgba(205,205,205,1)"></path>
+          </svg>
+          &nbsp;&nbsp;
+          <ion-input aria-label="Password" placeholder="Password"
+          formControlName="password"
+          [(ngModel)]="userdata.password" name="password" required></ion-input>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+            <path
+              d="M12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3ZM12.0003 19C16.2359 19 19.8603 16.052 20.7777 12C19.8603 7.94803 16.2359 5 12.0003 5C7.7646 5 4.14022 7.94803 3.22278 12C4.14022 16.052 7.7646 19 12.0003 19ZM12.0003 16.5C9.51498 16.5 7.50026 14.4853 7.50026 12C7.50026 9.51472 9.51498 7.5 12.0003 7.5C14.4855 7.5 16.5003 9.51472 16.5003 12C16.5003 14.4853 14.4855 16.5 12.0003 16.5ZM12.0003 14.5C13.381 14.5 14.5003 13.3807 14.5003 12C14.5003 10.6193 13.381 9.5 12.0003 9.5C10.6196 9.5 9.50026 10.6193 9.50026 12C9.50026 13.3807 10.6196 14.5 12.0003 14.5Z"
+              fill="rgba(205,205,205,1)"></path>
+          </svg>
+        </ion-item>
+
+        <div class="p-1 mt-2 flex justify-end" (click)="goToforgotpass()">
+          <label class="material-checkbox">
+            Forgot password?
+          </label>
+        </div>
+
+        <div class="p-1 mt-6">
+          <label class="material-checkbox">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Remember me
+          </label>
+        </div>
+
+
+        <button class="btn-grad mt-6" type="submit" >
+          <span style="float: center; font-weight: bold; font-size: 0.9rem">Sign In</span>
+        </button>
+
+        <div class="pt-12" (click)="goTosignup()">
+          <ion-label align="left" class="mt-1 text-start">Don't have an account?<b class="tcolor1">Create</b> here.
+            <br>
+
+          </ion-label>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+</ion-content>
