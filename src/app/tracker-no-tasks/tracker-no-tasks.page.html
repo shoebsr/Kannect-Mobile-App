@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="flex justify-between p-2">
+      <div>
+        <ion-buttons slot="start">
+          <ion-back-button class="text-white"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <div>
+        <ion-label class="text-white text-lg font-bold">
+          Task Tracker
+        </ion-label>
+      </div>
+      <div slot="end" class="pr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1 1 16 0v7zm-2 0v-7a6 6 0 1 0-12 0v7h12zm-9 4h6v2H9v-2z"
+            fill="rgba(255,255,255,1)" /></svg>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-4">
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> Tasks from Organizations</p>
+      <p class="seeall pr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path
+            d="M18.75 12.75h1.5a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5zM12 6a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 6zM12 18a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 18zM3.75 6.75h1.5a.75.75 0 100-1.5h-1.5a.75.75 0 000 1.5zM5.25 18.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 010 1.5zM3 12a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 013 12zM9 3.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM12.75 12a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM9 15.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+        </svg>
+
+      </p>
+    </div>
+  </div>
+  <div class="p-4" align="center">
+    <div style="margin-top: 50%;">
+      <img src="assets/img/track.png" alt="">
+      <p>You do not have any tasks from organizations.</p>
+    </div>
+  </div>
+</ion-content>
+<app-footer></app-footer>

@@ -1,3 +1,10 @@
+ion-content{
+  --background: linear-gradient(to right,  #f80592 0%, #f80592 5%, #1b8dd4  100%);
+  // --ion-background-color:#111D12;
+}
+.bg-class{
+  background-image: linear-gradient(197deg, #f80592 0%, #f80592 13.5%, #1b8dd4 33.33%, #1b8dd4 100%) !important
+}
 #container {
   text-align: center;
 

@@ -1,0 +1,156 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Tasks Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let item of memberlistdata">
+    <img class="object-fill object-covers h-48 w-full" src="{{item.img_banner}}" alt="">
+
+    <div class="mt-2 border-b border-gray-300">
+      <ion-row class="p-2">
+        <ion-col size="2">
+          <img class="w-full rounded-full border-b border-gray-200 shadow-md"
+            style="z-index: 1000; position: absolute; margin-top: -42%;" src="{{item.img_logo}}" alt="">
+        </ion-col>
+
+        <ion-col size="6" class="-mt-3 pl-2" align="left">
+          <ion-label class="head-det pl-1">
+            {{item.org_name}}
+          </ion-label>
+          <p class="text-sm text-gray-400 pl-1">
+            <ng-container [ngSwitch]="item.org_type">
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'N'">Non Profit/NGO</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'P'">For Profit</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'A'">Association</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'C'">Club</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'G'">Networking Group</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchDefault>Unknown Type</span>
+            </ng-container>
+          </p>
+          <p class="text-sm text-gray-400 pl-1">
+            <ion-icon name="location"></ion-icon>&nbsp; {{item.address2}}
+          </p>
+        </ion-col>
+
+        <!-- <ion-col size="6" align="left">
+          <ion-label class="head-det pl-1">
+            Heads Foundation
+          </ion-label>
+          <p class="text-sm text-gray-400 pl-1">Non-profit</p>
+          <p class="text-sm text-gray-400 pl-1">
+            <ion-icon name="location"></ion-icon>&nbsp; Texas Us
+          </p>
+        </ion-col> -->
+
+        <ion-col size="2" style="visibility: hidden;">
+          <div align="center" style="background-color: red; color: white; border-radius: 5px;">
+            <div class="text-white font-bold">GOAL</div>
+            <p class="text-sm text-white pl-1">6</p>
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div align="center" style="background-color: #1b8dd4; color: white; border-radius: 5px;">
+            <div class="text-white font-bold">GOAL</div>
+            <p class="text-sm text-white pl-1">{{item.global_goals}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <div *ngFor="let item of taskdata">
+    <div class="p-2 border-b border-gray-300">
+      <p class="text-det pl-2">Tasks 1</p>
+
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="textdec "> Description</p>
+      </div>
+
+      <p class="textside pl-2">{{item.task_description}}</p>
+    </div>
+
+    <div class="p-2 border-b border-gray-300">
+
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="text-card pl-2"> Basic Details</p>
+      </div>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="5">
+            <p class="textside">Tasks ID</p>
+          </ion-col>
+          <ion-col size="1"> :</ion-col>
+          <ion-col class="textdec" size="6" >
+            <p> {{item.task_id }}</p>
+          </ion-col>
+
+          <ion-col size="5">
+            <p class="textside">Assigned To</p>
+          </ion-col>
+          <ion-col size="1"> :</ion-col>
+          <ion-col class="textdec" size="6"> {{item.assigned_to}}</ion-col>
+
+          <ion-col size="5">
+            <p class="textside">Due date</p>
+          </ion-col>
+          <ion-col size="1"> :</ion-col>
+          <ion-col class="textdec" size="6">{{item.task_due_date}}</ion-col>
+
+          <ion-col size="5">
+            <p class="textside">Task status</p>
+          </ion-col>
+          <ion-col size="1"> :</ion-col>
+          <ion-col class="text-card " size="6">
+            <div class="pr-8" align="center">
+              <!-- <ng-container [ngSwitch]="item.status">
+                <span *ngSwitchCase="1">Low</span>
+                <span *ngSwitchCase="'2'">Medium</span>
+                <span *ngSwitchCase="'3'">High</span>
+                
+              </ng-container> -->
+              <p class="bg-pink-100 p-1 rounded-sm textdec" style="color: #f80592;">{{item.status}}</p>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="text-card pl-2"> Status</p>
+      </div>
+
+      <ion-item lines="none" class="ion-input-box mt-6">
+        <ion-select justify="space-between" label="Select" placeholder="Select Status">
+          <ion-select-option value="reject">Reject</ion-select-option>
+          <ion-select-option value="banana">Completed</ion-select-option>
+          <ion-select-option value="orange">In progress</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="ion-input-box mt-6">
+        <ion-textarea rows="4" placeholder="Type your message here..."></ion-textarea>
+        <ion-button expand="full">Send</ion-button>
+      </ion-item>
+
+      <div class="flex justify-between pt-2 pl-2 pr-2">
+        <p class="text-card pl-2"> Notes History</p>
+      </div>
+
+      <div class="memcard p-3 mt-2" *ngFor="let item of notes">
+        <div class="flex justify-start">
+          <p class="notetextlarge pl-2"> Chris Fox <span class="notetextsmall">@chris123</span></p>
+        </div>
+        <div class="flex justify-start">
+          <p class="textdec pl-2">{{item.notes}}</p>
+        </div>
+        <div class="flex justify-start">
+          <p class="notetextlarge2 pl-2"> <span style="color: #f80592;">{{item.created_date}}</span> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,130 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngFor="let item of profiledata">
+  <div class="flex justify-end">
+    <div routerLink="/edit-profile" style="z-index: 1000; position: absolute;"
+      class="bg-pink-50 rounded-sm p-1 text-pink-600 text-sm p-2">
+      <ion-icon name="create-outline"></ion-icon> Edit Profile
+    </div>
+  </div>
+  <img class="object-fill object-covers h-48 w-full" src="assets/img/profile-banner.png" alt="">
+
+  <div class="mt-2 border-b border-gray-300">
+    <ion-row class="p-2">
+      <ion-col size="2">
+        <img class="w-full" style="z-index: 1000; position: absolute; margin-top: -44%;" src="assets/img/Ellipse 2.png"
+          alt="">
+      </ion-col>
+      <ion-col size="6" class="-mt-3 pl-2" align="left">
+        <ion-label class="head-det pl-1">
+         {{item.first_name}}
+        </ion-label>
+        <p class="text-sm text-gray-400 pl-1">Texas, US</p>
+        <p class="textside -mt-1">
+          <ion-icon class="mt-1" style="font-size: small; color: rgb(115, 231, 0);" name="checkmark-circle">
+          </ion-icon><span class="-mt-1">
+            Open to
+            Volunteering
+          </span>
+        </p>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="p-4">
+        <div class="bg-blue-100 text-black text-xs rounded-md p-4">
+          <p>Success isn't measured by money or power or social rank. Success is measured by your discipline and inner
+            peace.</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="p-2">
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-seg "> Basic Details</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <p class="textside">Email</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6"> {{item.email}}</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Address</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">8203,Willow PL Dr Suite 290, Houstn, TX 77070, United States</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Contact Number</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">{{item.emerg_number}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-seg "> Additional Information</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <p class="textside">Date of birth</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">12/04/1995</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Blood type</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">{{item.blood_group }}</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Gender</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">
+          <ng-container [ngSwitch]="item.gender">
+            <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'M'">Male</span>
+            <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'F'">Female</span>
+            <span class="text-sm text-gray-400 pl-1" *ngSwitchDefault>Unknown Type</span>
+          </ng-container>
+        </ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Marital Status</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">{{item.marital_status}}</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Emergency Contact name</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">{{item.emerg_number}}</ion-col>
+
+        <ion-col size="5">
+          <p class="textside">Emergency Contact number</p>
+        </ion-col>
+        <ion-col size="1"> :</ion-col>
+        <ion-col class="textdec" size="6">{{item.emerg_person}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </div>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,210 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="flex justify-between p-2">
+      <div>
+        <ion-buttons slot="start">
+          <ion-back-button class="text-white"></ion-back-button>
+        </ion-buttons>
+      </div>
+      <div>
+        <ion-label class="text-white text-lg font-bold">
+          Tasks List
+        </ion-label>
+      </div>
+      <div slot="end" class="pr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1 1 16 0v7zm-2 0v-7a6 6 0 1 0-12 0v7h12zm-9 4h6v2H9v-2z"
+            fill="rgba(255,255,255,1)" /></svg>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-4">
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> Tasks from Organizations</p>
+      <p class="seeall pr-2" id="open-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path
+            d="M18.75 12.75h1.5a.75.75 0 000-1.5h-1.5a.75.75 0 000 1.5zM12 6a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 6zM12 18a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 0112 18zM3.75 6.75h1.5a.75.75 0 100-1.5h-1.5a.75.75 0 000 1.5zM5.25 18.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 010 1.5zM3 12a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5A.75.75 0 013 12zM9 3.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM12.75 12a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM9 15.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
+        </svg>
+
+      </p>
+    </div>
+
+    <div class="p-3">
+      <div class="memcard mt-2"  *ngFor="let item of tasklist">
+        <ion-row class="p-2" (click)="goTotaskdet(item)">
+          <ion-col size="2">
+            <img src="{{item.img_logo}}" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              {{item.task_title}}
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">{{item.org_name }}</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #ff0090;" class="bg-pink font-bold">
+                <!-- {{item.task_priority}} -->
+                <ng-container [ngSwitch]="item.task_priority">
+                  <span *ngSwitchCase="1">Low</span>
+                  <span *ngSwitchCase="'2'">Medium</span>
+                  <span *ngSwitchCase="'3'">High</span>
+                  
+                </ng-container>
+              </div>
+              <p class="text-sm text-gray-400 pl-1">{{item.task_due_date}}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+<!-- 
+      <div class="memcard mt-2" (click)="goTotaskdet()">
+        <ion-row class="p-2">
+          <ion-col size="2">
+            <img src="assets/img/Profile Photo.png" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              Task1
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">By Heads Foundation</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #e4d100;" class="bg-pink font-bold">Medium</div>
+              <p class="text-sm text-gray-400 pl-1">Mar 01, 2023</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="memcard mt-2" (click)="goTotaskdet()">
+        <ion-row class="p-2">
+          <ion-col size="2">
+            <img src="assets/img/Profile Photo.png" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              Task1
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">By Heads Foundation</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #0858e1;" class="bg-pink font-bold">Low</div>
+              <p class="text-sm text-gray-400 pl-1">Mar 01, 2023</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="memcard mt-2" (click)="goTotaskdet()">
+        <ion-row class="p-2">
+          <ion-col size="2">
+            <img src="assets/img/Profile Photo.png" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              Task1
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">By Heads Foundation</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #ff0090;" class="bg-pink font-bold">High</div>
+              <p class="text-sm text-gray-400 pl-1">Mar 01, 2023</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="memcard mt-2" (click)="goTotaskdet()">
+        <ion-row class="p-2">
+          <ion-col size="2">
+            <img src="assets/img/Profile Photo.png" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              Task1
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">By Heads Foundation</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #ff0090;" class="bg-pink font-bold">High</div>
+              <p class="text-sm text-gray-400 pl-1">Mar 01, 2023</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="memcard mt-2" (click)="goTotaskdet()">
+        <ion-row class="p-2">
+          <ion-col size="2">
+            <img src="assets/img/Profile Photo.png" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              Task1
+            </ion-label>
+            <p class="text-sm text-gray-400 pl-1">By Heads Foundation</p>
+          </ion-col>
+          <ion-col size="4">
+            <div align="right">
+              <div style="color: #ff0090;" class="bg-pink font-bold">High</div>
+              <p class="text-sm text-gray-400 pl-1">Mar 01, 2023</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- //Modal Code -->
+
+  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.45" [breakpoints]="[0, 0.45, 0.5, 0.75]">
+    <ng-template>
+      <ion-content>
+        <div class="flex justify-between p-4">
+          <p class="text-tit pl-2"> Filter By</p>
+          <p class="seeall pr-2" (click)="modal.setCurrentBreakpoint(0.75)">
+            <img src="assets/img/Vector.png" alt="">
+          </p>
+        </div>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-checkbox></ion-checkbox>
+            <ion-label class="pl-2">
+              <h2>Completed tasks</h2>
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-checkbox></ion-checkbox>
+            <ion-label class="pl-2">
+              <h2>Overdue Tasks</h2>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox></ion-checkbox>
+            <ion-label class="pl-2">
+              <h2>All Tasks</h2>
+            </ion-label>
+          </ion-item>
+
+          <div align="center">
+            <button class="mt-2 btncard">Search</button>
+          </div>
+
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
+<app-footer></app-footer>

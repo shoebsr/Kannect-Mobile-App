@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="flex justify-between p-2">
+      <div>
+        <ion-menu-button>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </ion-menu-button>
+      </div>
+      <div>
+        <ion-label class="text-white text-lg font-bold">
+          Kannect
+        </ion-label>
+      </div>
+      <div slot="end" class="pr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1 1 16 0v7zm-2 0v-7a6 6 0 1 0-12 0v7h12zm-9 4h6v2H9v-2z"
+            fill="rgba(255,255,255,1)" /></svg>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-2">
+
+    <div class="p-2">
+      <ion-label class="text-dash">Welcome Jenny</ion-label>
+      <p class="text-dashsmall">6 May 2023</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <div class="card1">
+            <div class="flex justify-between p-2">
+              <div>
+                <ion-label class="text-large-dash">
+                  Tasks
+                </ion-label><br>
+                <p class="text-extralarge1">5</p>
+              </div>
+              <div class="flex items-center">
+                <ion-icon class="bg-pink-100 p-3 rounded-full" style="color: #ff0090;" name="clipboard-outline">
+                </ion-icon>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+
+        <ion-col size="6">
+          <div class="card2">
+            <div class="flex justify-between p-2">
+              <div>
+                <ion-label class="text-large-dash">
+                  Messages
+                </ion-label><br>
+                <p class="text-extralarge1">20</p>
+              </div>
+              <div class="flex items-center">
+                <ion-icon class="bg-blue-100 p-3 rounded-full" style="color: #1b8dd4;" name="chatbox-outline">
+                </ion-icon>
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> Events</p>
+      <p class="seeall pr-2">See All</p>
+    </div>
+    <ion-grid>
+      <ion-row class="ion-no-padding">
+        <ion-col size="6" *ngFor="let item of eventlistdata?.list">
+          <div class="w-full card">
+            <img alt="" class="w-full rounded-tl-md rounded-tr-md" src="{{item.img_banner}}" />
+            <ion-card-header class="-mt-3">
+              <ion-card-title class="text-card"> {{item.event_name}}</ion-card-title>
+              <ion-card-subtitle>
+                <div class="p flex justify-start">
+                  <div>
+                    <img src="assets/img/iconcal.png" alt="">
+                  </div>
+                  <div class="pl-2"><span class="datecard ">{{item.start_date }}</span></div>
+                </div>
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content class=" -mt-1">
+              <button class="w-full" (click)="gotoeventdetails(item.event_id)">See Details</button>
+            </ion-card-content>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- <ion-grid class="-pt-5">
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of eventlistdata?.list">
+          <div class="card">
+            <div class="img2">
+              <div class="save">
+                <img src="{{item.img_banner}}" alt="">
+              </div>
+            </div>
+            <div class="text p-2">
+              <ion-label class="text-card pl-1">
+                {{item.event_name}}
+              </ion-label>
+              <div class="p mt-1 flex justify-start">
+                <div>
+                  <img src="assets/img/iconcal.png" alt="">
+                </div>
+                <div class="pl-2"><span class="datecard ">{{item.start_time }}</span></div>
+              </div>
+              <button class="mt-2" [routerLink]="['/event-details']">See Details</button>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+
+    <div class="flex justify-between pt-2 pl-2 pr-2">
+      <p class="text-tit pl-2"> Memberships</p>
+      <p class="seeall pr-2" [routerLink]="['/membership-list']">See All</p>
+    </div>
+
+    <div class="p-3" *ngFor="let item of listdata">
+      <div class="memcard">
+        <ion-row (click)="goTomemberdetails(item)">
+          <ion-col size="2">
+            <img class="rounded-full" src="{{item.img_logo}}" alt="">
+          </ion-col>
+          <ion-col size="6" align="left">
+            <ion-label class="text-card pl-1">
+              {{item.org_name}}
+            </ion-label>
+            <ng-container [ngSwitch]="item.org_type">
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'N'">Non Profit/NGO</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'P'">For Profit</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'A'">Association</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'C'">Club</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchCase="'G'">Networking Group</span>
+              <span class="text-sm text-gray-400 pl-1" *ngSwitchDefault>Unknown Type</span>
+            </ng-container>
+            <!-- <p class="text-sm text-gray-400 pl-1">Non-profit NGO</p> -->
+          </ion-col>
+          <ion-col size="2">
+            <div class="notification-container">
+              <ion-icon class="bg-pink-100 p-3 rounded-full" style="color: #ff0090;" name="clipboard-outline">
+              </ion-icon>
+              <div class="notification-badge bg-pink">1</div>
+            </div>
+          </ion-col>
+          <ion-col size="2">
+            <div class="notification-container">
+              <ion-icon class="bg-blue-100 p-3 rounded-full" style="color: #1b8dd4;" name="chatbox-outline"></ion-icon>
+              <div class="notification-badge bg-blue">3</div>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </div>
+    </div>
+
+
+    <!-- <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <img src="assets/img/logo.png" alt="">
+        </ion-col>
+        <ion-col size="6">
+          <p class="text-sm pl-2"> Heads Foundation</p>
+        </ion-col>
+        <ion-col size="2">
+
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  </div>
+</ion-content>
+<app-footer></app-footer>

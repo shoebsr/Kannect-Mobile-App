@@ -1,0 +1,251 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="flex justify-end">
+    <div routerLink="/edit-profile" style="z-index: 1000; position: absolute;"
+      class="bg-pink-50 rounded-sm p-1 text-pink-600 text-sm p-2">
+      <ion-icon name="create-outline"></ion-icon>
+    </div>
+  </div>
+  <img class="object-fill object-covers h-48 w-full" src="assets/img/profile-banner.png" alt="">
+
+  <div class="mt-2 border-b border-gray-300">
+    <ion-row class="p-2">
+      <ion-col size="2">
+        <img class="w-full" style="z-index: 1000; position: absolute; margin-top: -44%;" src="assets/img/Ellipse 2.png"
+          alt="">
+      </ion-col>
+      <ion-col size="6" class="-mt-3 pl-2" align="left">
+        <ion-label class="head-det pl-1">
+          Jennifer Deo
+        </ion-label>
+        <p class="text-sm text-gray-400 pl-1">Texas, US</p>
+        <p class="textside -mt-1">
+          <ion-icon class="mt-1" style="font-size: small; color: rgb(115, 231, 0);" name="checkmark-circle">
+          </ion-icon><span class="-mt-1">
+            Open to
+            Volunteering
+          </span>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-segment (ionChange)="segmentChanged($event)" scrollable value="basic">
+      <ion-segment-button value="basic">
+        <ion-label class="hover:border-b-4 font-100 hover:font-bold border-red-600">Basic Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="additional">
+        <ion-label class=" hover:border-b-4 hover:font-bold border-red-600">Additional Details</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="p-2">
+    <div class="ion-padding" *ngIf="switchTab === 'basic'">
+      <ion-grid>
+        <ion-row class="border-b border-gray-300">
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Full Name
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label=" Full Name" placeholder=" Full Name" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Address 1
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Address 1" placeholder="Address 1" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Address 2
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Address 2" placeholder="Address 2" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-label class="text-card1 pl-1 pb-1">
+              City
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input type="date" aria-label="City" placeholder="City" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-label class="text-card1 pl-1 pb-1">
+              State
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="State" placeholder="State" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Postal Code
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Postal Code" placeholder="Postal Code" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Country
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-select justify="space-between" label="Select" placeholder="Select Country">
+                <ion-select-option value="india">India</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Bio
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-textarea rows="4" placeholder="write here..."></ion-textarea>
+              <!-- <ion-input aria-label="Enter Email address" placeholder="Enter Email address" name="" required>
+              </ion-input> -->
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Email address
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Enter Email address" placeholder="Enter Email address" name="" required>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Phone number
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Enter Phone number" placeholder="Enter Phone number" name="" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <div class="p-1 mt-6">
+            <label class="material-checkbox">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              Are you open to volunteering?
+            </label>
+          </div>
+          <button class="w-full mt-2">Save Details</button>
+        </ion-row>
+
+        <p class="datecard pl-2 mt-2"> Change phone number</p>
+
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-label class="text-card1 pl-1 pb-1">
+              Enter new phone number
+            </ion-label>
+            <ion-item lines="none" class="ion-input-box">
+              <ion-input aria-label="Enter new phone number" placeholder="Enter new phone number" name="" required>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+
+          <button routerLink="/change-number" class="w-full mt-2">Verify</button>
+
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="ion-padding" *ngIf="switchTab === 'additional'">
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Date of birth
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input type="date" aria-label=" First Name" placeholder=" First Name" name="" required></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Blood type
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input aria-label="Eg. o+" placeholder="Eg. o+" name="" required></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Gender
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box mt-6">
+            <ion-select justify="space-between" label="Select" placeholder="Select Gender">
+              <ion-select-option value="female">Female</ion-select-option>
+              <ion-select-option value="male">Male</ion-select-option>
+              <ion-select-option value="other">Other</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Marital Status
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box mt-6">
+            <ion-select justify="space-between" label="Select" placeholder="">
+              <ion-select-option value="married">Married </ion-select-option>
+              <ion-select-option value="unmarried">Unmarried</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+
+        <p class="datecard pl-2 mt-2">Emergency Contact</p>
+
+        <ion-col size="12">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Emergency contact name
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input aria-label="Emergency contact name" placeholder="Emergency contact name" name="" required>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-label class="text-card1 pl-1 pb-1">
+            Emergency contact number
+          </ion-label>
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input aria-label="Emergency contact number" placeholder="Emergency contact number" name="" required>
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+        <button class="w-full">Save Details</button>
+
+      </ion-row>
+    </div>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="text-white"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">Create Messages</ion-title>
+    <ion-icon routerLink="/create-messages" slot="end" class="pr-2 text-white text-lg" name="create-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="p-4">
+    <p class="textdec1 pl-2">Recipient name</p>
+    <ion-grid class="top-grid">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input aria-label="Type name here" placeholder="Type name here" name="" required></ion-input>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="bottom-grid">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item lines="none" class="ion-input-box">
+            <ion-input aria-label="Type a message" placeholder="Type a message" name="" required></ion-input>
+            <ion-icon style="color: #1b8dd4;" name="send"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
